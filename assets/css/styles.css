@@ -12,20 +12,20 @@
   --font-body: 'Outfit', sans-serif;
   --font-title: 'Playfair Display', serif;
 
-  /* HSL Tailored Color Palette */
-  --primary-hue: 350;
-  --primary-sat: 71%;
-  --primary-light: 21%;
+  /* HSL Tailored Color Palette (Original Vatan Orange/Terracotta theme) */
+  --primary-hue: 20;
+  --primary-sat: 100%;
+  --primary-light: 30%;
   
-  --color-primary: hsl(var(--primary-hue), var(--primary-sat), var(--primary-light)); /* Elegant Crimson #5c0f1b */
+  --color-primary: hsl(var(--primary-hue), var(--primary-sat), var(--primary-light)); /* Terracotta / Rust Orange #993300 */
   --color-primary-hover: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) - 5%));
-  --color-secondary: hsl(45, 65%, 53%); /* Antique Gold #d4af37 */
-  --color-secondary-hover: hsl(45, 65%, 45%);
-  --color-accent: hsl(35, 35%, 96%); /* Very Soft warm background */
+  --color-secondary: hsl(33, 62%, 48%); /* Golden Orange #c7822f */
+  --color-secondary-hover: hsl(33, 62%, 40%);
+  --color-accent: hsl(24, 40%, 96%); /* Very Soft warm background */
   
-  --color-bg: hsl(30, 20%, 98%); /* Warm White */
+  --color-bg: hsl(24, 40%, 98%); /* Warm Peach White */
   --color-surface: hsl(0, 0%, 100%);
-  --color-surface-card: hsl(30, 15%, 96%);
+  --color-surface-card: hsl(24, 25%, 95%);
   
   --color-text: hsl(20, 10%, 15%);
   --color-text-light: hsl(20, 5%, 95%);
@@ -271,8 +271,8 @@ button:hover, .btn:hover {
 
 /* Main Navigation Header */
 .main-header {
-  background-color: var(--color-bg);
-  box-shadow: 0 2px 10px var(--color-shadow);
+  background-color: #1a1615;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -313,12 +313,12 @@ button:hover, .btn:hover {
   letter-spacing: 0.05em;
   padding: 10px 0;
   display: block;
-  color: var(--color-text);
+  color: var(--color-text-light);
   text-transform: uppercase;
 }
 
 .nav-link:hover {
-  color: var(--color-primary);
+  color: var(--color-secondary);
 }
 
 /* Dropdown Menu styling */
@@ -326,8 +326,8 @@ button:hover, .btn:hover {
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: var(--color-surface);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  background-color: #26211f;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
   border-radius: var(--border-radius-sm);
   list-style: none;
   min-width: 240px;
@@ -349,14 +349,14 @@ button:hover, .btn:hover {
 .dropdown-item a {
   display: block;
   padding: 10px 20px;
-  color: var(--color-text);
+  color: var(--color-text-light);
   font-size: 0.9rem;
   font-weight: 500;
 }
 
 .dropdown-item a:hover {
-  background-color: var(--color-accent);
-  color: var(--color-primary);
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
 }
 
 /* Mobile Menu Toggle */
@@ -365,7 +365,7 @@ button:hover, .btn:hover {
   background: none;
   border: none;
   font-size: 1.8rem;
-  color: var(--color-primary);
+  color: var(--color-secondary);
   cursor: pointer;
   padding: 5px;
   width: 44px;
@@ -702,7 +702,7 @@ button:hover, .btn:hover {
 .form-control:focus {
   outline: none;
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(92, 15, 27, 0.15);
+  box-shadow: 0 0 0 3px rgba(153, 51, 0, 0.15);
 }
 
 .rating-select {
@@ -783,7 +783,7 @@ button:hover, .btn:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(92, 15, 27, 0.8);
+  background: rgba(153, 51, 0, 0.8);
   display: flex;
   align-items: center;
   justify-content: center;
