@@ -155,8 +155,13 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero" style="background-image: url('assets/images/slide11.jpg');" aria-label="Welcome Banner">
+  <!-- Hero Section with Dynamic Slideshow -->
+  <section class="hero" aria-label="Welcome Banner">
+    <div class="hero-slides">
+      <div class="hero-slide active" style="background-image: url('assets/images/slide11.jpg');"></div>
+      <div class="hero-slide" style="background-image: url('assets/images/IMG-5-1.jpg');"></div>
+      <div class="hero-slide" style="background-image: url('assets/images/IMG-4-1.jpg');"></div>
+    </div>
     <div class="hero-content">
       <!-- Correct spelling: ACCOMMODATE (addressed report feedback) -->
       <h2 class="hero-title">VATAN CAN ACCOMMODATE PRIVATE PARTIES OF UP TO 85 PEOPLE</h2>
@@ -173,7 +178,7 @@
     <h1 class="visually-hidden">Vatan Indian Vegetarian Restaurant | New York City, NY</h1>
     
     <!-- 3-Block Grid (Core info blocks) -->
-    <section class="container" style="margin-top: -40px; position: relative; z-index: 10;" aria-label="Key Information">
+    <section class="container reveal" style="margin-top: -40px; position: relative; z-index: 10;" aria-label="Key Information">
       <div class="features-grid">
         <div class="feature-card">
           <div class="feature-icon" aria-hidden="true">
@@ -209,7 +214,7 @@
     </section>
 
     <!-- Detailed Ambiance Section (Helps reach content depth & Local SEO keywords) -->
-    <section class="section-padding container">
+    <section class="section-padding container reveal">
       <div class="about-section">
         <div class="about-content">
           <h2>VATAN CELEBRATES THE FLAVORS OF GUJARAT AND THE AMBIANCE OF A TYPICAL INDIAN COURTYARD</h2>
@@ -225,8 +230,87 @@
       </div>
     </section>
 
+    <!-- Dynamic Interactive Thali Offerings Slider -->
+    <section class="section-padding reveal" style="background-color: var(--color-surface); overflow: hidden;" aria-labelledby="thali-slider-title">
+      <div class="container">
+        <div class="text-center" style="margin-bottom: 40px;">
+          <h2 id="thali-slider-title">Our Signature Thali Offerings</h2>
+          <p>An interactive preview of some of the delightful vegetarian items in our all-you-can-eat thali feast.</p>
+        </div>
+        
+        <div class="dish-slider-container">
+          <button class="dish-slider-btn prev" aria-label="Previous Dish">&#10094;</button>
+          <div class="dish-slider-track-wrap">
+            <div class="dish-slider-track">
+              <!-- Dish 1 -->
+              <div class="dish-card">
+                <div class="dish-card-img">
+                  <img src="assets/images/IMG-1-400x284.jpg" alt="Sev Puri - crispy flat puris with potatoes and chutneys" width="300" height="213" loading="lazy">
+                </div>
+                <div class="dish-card-content">
+                  <h3>Sev Puri</h3>
+                  <p>Crispy flat puris topped with potatoes, chickpea mash, yogurt, and sweet-spicy chutneys.</p>
+                </div>
+              </div>
+              <!-- Dish 2 -->
+              <div class="dish-card">
+                <div class="dish-card-img">
+                  <img src="assets/images/IMG-2-400x284.jpg" alt="Samosa - crispy pastry with savory potato filling" width="300" height="213" loading="lazy">
+                </div>
+                <div class="dish-card-content">
+                  <h3>Samosa</h3>
+                  <p>Golden, flaky pastry pyramids stuffed with spiced potatoes and green peas, fried to perfection.</p>
+                </div>
+              </div>
+              <!-- Dish 3 -->
+              <div class="dish-card">
+                <div class="dish-card-img">
+                  <img src="assets/images/IMG-3-400x284.jpg" alt="Muthia - steamed dumplings spiced with fenugreek" width="300" height="213" loading="lazy">
+                </div>
+                <div class="dish-card-content">
+                  <h3>Muthia</h3>
+                  <p>Traditional steamed flour dumplings seasoned with fenugreek leaves, ginger, chilies, and sesame temper.</p>
+                </div>
+              </div>
+              <!-- Dish 4 -->
+              <div class="dish-card">
+                <div class="dish-card-img">
+                  <img src="assets/images/IMG-4-2-400x284.jpg" alt="Bataka Nu Shaak - potato curry" width="300" height="213" loading="lazy">
+                </div>
+                <div class="dish-card-content">
+                  <h3>Bataka Nu Shaak</h3>
+                  <p>A classic dry potato curry prepared with mild mustard seed tempering, turmeric, and Indian spices.</p>
+                </div>
+              </div>
+              <!-- Dish 5 -->
+              <div class="dish-card">
+                <div class="dish-card-img">
+                  <img src="assets/images/IMG-5-2-400x284.jpg" alt="Kadhi - yogurt soup" width="300" height="213" loading="lazy">
+                </div>
+                <div class="dish-card-content">
+                  <h3>Kadhi</h3>
+                  <p>A comforting Gujarati soup cooked with yogurt, chickpea flour, ginger, and spiced temper served piping hot.</p>
+                </div>
+              </div>
+              <!-- Dish 6 -->
+              <div class="dish-card">
+                <div class="dish-card-img">
+                  <img src="assets/images/IMG-6-2-400x284.jpg" alt="Gulab Jamun - milk solid dumplings in sugar syrup" width="300" height="213" loading="lazy">
+                </div>
+                <div class="dish-card-content">
+                  <h3>Gulab Jamun</h3>
+                  <p>Sweet milk dumplings fried to a golden brown hue, soaked in warm rosewater and cardamom syrup.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="dish-slider-btn next" aria-label="Next Dish">&#10095;</button>
+        </div>
+      </div>
+    </section>
+
     <!-- Thali Details Block -->
-    <section style="background-color: var(--color-surface-card);" class="section-padding">
+    <section style="background-color: var(--color-surface-card);" class="section-padding reveal">
       <div class="container text-center" style="max-width: 850px;">
         <h2>LET US TRANSPORT YOU TO INDIA WHILE YOU ENJOY OUR HIGHLY ACCLAIMED PRIX FIXE THALI</h2>
         <p style="margin-top: 20px; font-size: 1.1rem;">Our signature meal is served in a course format featuring fresh, high-quality vegetarian ingredients. Our appetizers include classics like Samosas, Sev Puri, Muthia, and Ragda Patis. For the entree, you will receive our Toor Dal, potato curries, Bhaji (spinach and corn), Chole (chickpeas), and seasonal vegetables, accompanied by steamed Pulao, Khichdi, warm Kadhi, and freshly puffed Puris or flat Rotis.</p>
@@ -236,8 +320,46 @@
       </div>
     </section>
 
+    <!-- Dynamic Reviews Ticker / Testimonial Carousel -->
+    <section class="section-padding reveal" style="background-color: var(--color-surface-card);" aria-labelledby="testimonial-section-title">
+      <div class="container" style="max-width: 800px;">
+        <div class="text-center" style="margin-bottom: 30px;">
+          <h2 id="testimonial-section-title">What the Critics Say</h2>
+        </div>
+        
+        <div class="testimonial-slider">
+          <div class="testimonial-slide active">
+            <blockquote class="testimonial-quote">"Instead of just stepping over the border into the exotic, the nineteen-dish meal (all-you-can-eat) celebrates a vegetarian culinary culture still unusual to America."</blockquote>
+            <cite class="testimonial-author">— The New Yorker</cite>
+          </div>
+          
+          <div class="testimonial-slide">
+            <blockquote class="testimonial-quote">"Vatan is a melodious wake-up call."</blockquote>
+            <cite class="testimonial-author">— The New York Times</cite>
+          </div>
+          
+          <div class="testimonial-slide">
+            <blockquote class="testimonial-quote">"An 'incredible variety of flavors' from 'delicate' to 'spicy' emerges from the kitchen of this Murray Hill veggie Indian where the 'authentic Gujarati' specialties come in an 'all-you-can-eat' thali format."</blockquote>
+            <cite class="testimonial-author">— Zagat Guide</cite>
+          </div>
+          
+          <div class="testimonial-slide">
+            <blockquote class="testimonial-quote">"Vatan will leave you in a well-fed stupor worth the wake-up call."</blockquote>
+            <cite class="testimonial-author">— Newsday</cite>
+          </div>
+        </div>
+        
+        <div class="testimonial-dots" role="tablist" aria-label="Testimonial slides">
+          <span class="testimonial-dot active" role="tab" aria-selected="true" aria-label="Slide 1"></span>
+          <span class="testimonial-dot" role="tab" aria-selected="false" aria-label="Slide 2"></span>
+          <span class="testimonial-dot" role="tab" aria-selected="false" aria-label="Slide 3"></span>
+          <span class="testimonial-dot" role="tab" aria-selected="false" aria-label="Slide 4"></span>
+        </div>
+      </div>
+    </section>
+
     <!-- Neighborhood / Local Info Section -->
-    <section class="section-padding container text-center" style="max-width: 800px;">
+    <section class="section-padding container text-center reveal" style="max-width: 800px;">
       <h2>Dine in Murray Hill, Manhattan</h2>
       <p style="margin-top: 15px;">Vatan is proudly located on Third Avenue, in the Curry Hill / Murray Hill neighborhood of Manhattan, New York City. We are just a few blocks away from key Midtown landmarks. Easily accessible by the 6 Subway Train to the 28th Street Station. Simply walk three blocks East to Third Avenue.</p>
       <p>If you are driving, metered street parking is readily available along Third Avenue and adjacent side streets. Additionally, there are several public parking garages located within one block of the restaurant for your convenience.</p>

@@ -1002,3 +1002,266 @@ button:hover, .btn:hover {
     gap: 30px;
   }
 }
+
+/* ==========================================================================
+   8. Homepage Dynamic & Interactive Elements (FOUC-safe, Performant)
+   ========================================================================== */
+
+/* Hero Crossfade Slider */
+.hero-slides {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.hero-slide.active {
+  opacity: 1;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+}
+
+/* Scroll Reveal Elements */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+              transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Signature Thali Slider */
+.dish-slider-container {
+  position: relative;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 45px;
+}
+
+.dish-slider-track-wrap {
+  overflow: hidden;
+  width: 100%;
+}
+
+.dish-slider-track {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  gap: 20px;
+}
+
+.dish-card {
+  flex: 0 0 calc((100% - 40px) / 3); /* 3 cards on desktop */
+  background: var(--color-surface);
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  box-shadow: 0 4px 15px var(--color-shadow);
+  border: 1px solid var(--color-border);
+  transition: var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+}
+
+.dish-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(26, 22, 21, 0.15);
+  border-color: var(--color-secondary);
+}
+
+.dish-card-img {
+  overflow: hidden;
+  position: relative;
+  padding-top: 71%; /* 4:3 aspect ratio */
+}
+
+.dish-card-img img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.dish-card:hover .dish-card-img img {
+  transform: scale(1.08);
+}
+
+.dish-card-content {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.dish-card-content h3 {
+  font-family: var(--font-title);
+  color: var(--color-primary);
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.dish-card-content p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+}
+
+/* Slider Controls */
+.dish-slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--color-primary);
+  color: var(--color-text-light);
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: var(--transition-smooth);
+}
+
+.dish-slider-btn:hover {
+  background: var(--color-secondary);
+  color: var(--color-primary);
+}
+
+.dish-slider-btn.prev {
+  left: 0;
+}
+
+.dish-slider-btn.next {
+  right: 0;
+}
+
+/* Testimonial Section Slider */
+.testimonial-slider {
+  position: relative;
+  min-height: 160px;
+  margin-bottom: 25px;
+}
+
+.testimonial-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
+  text-align: center;
+}
+
+.testimonial-slide.active {
+  opacity: 1;
+  visibility: visible;
+  position: relative;
+}
+
+.testimonial-quote {
+  font-family: var(--font-title);
+  font-style: italic;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  color: var(--color-primary);
+  margin-bottom: 15px;
+}
+
+.testimonial-author {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.testimonial-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.testimonial-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-border);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.testimonial-dot.active {
+  background: var(--color-primary);
+  transform: scale(1.2);
+}
+
+/* Breakpoints for dynamic components */
+@media (max-width: 992px) {
+  .dish-card {
+    flex: 0 0 calc((100% - 20px) / 2); /* 2 cards on tablet */
+  }
+}
+
+@media (max-width: 600px) {
+  .dish-slider-container {
+    padding: 0 10px;
+  }
+  .dish-slider-btn {
+    display: none; /* Hide buttons on mobile, rely on native swipe */
+  }
+  .dish-slider-track-wrap {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  .dish-slider-track {
+    gap: 15px;
+  }
+  .dish-card {
+    flex: 0 0 85%; /* 1 card taking 85% width on mobile */
+    scroll-snap-align: center;
+  }
+  .testimonial-quote {
+    font-size: 1.25rem;
+  }
+}

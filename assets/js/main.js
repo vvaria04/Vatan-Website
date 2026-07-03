@@ -8,6 +8,10 @@ document.addEventListener('DOMContentLoaded', () => {
   initLightbox();
   initReviewForm();
   initContactForm();
+  initHeroSlider();
+  initScrollReveal();
+  initDishSlider();
+  initTestimonialSlider();
 });
 
 /**
@@ -266,4 +270,154 @@ function initContactForm() {
     alert('Your message has been sent successfully. We will get back to you soon!');
     contactForm.reset();
   });
+}
+
+/**
+ * 6. Hero Auto Crossfade Slideshow
+ */
+function initHeroSlider() {
+  const slides = document.querySelectorAll('.hero-slide');
+  if (slides.length <= 1) return;
+
+  let currentSlide = 0;
+  setInterval(() => {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add('active');
+  }, 4000); // changes slide every 4 seconds
+}
+
+/**
+ * 7. Scroll-driven Reveal Animations
+ */
+function initScrollReveal() {
+  const reveals = document.querySelectorAll('.reveal');
+  if (reveals.length === 0) return;
+
+  const revealOnScroll = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        observer.unobserve(entry.target); // trigger once
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -30px 0px'
+  });
+
+  reveals.forEach(element => {
+    revealOnScroll.observe(element);
+  });
+}
+
+/**
+ * 8. Signature Dishes Carousel Slider
+ */
+function initDishSlider() {
+  const track = document.querySelector('.dish-slider-track');
+  const prevBtn = document.querySelector('.dish-slider-btn.prev');
+  const nextBtn = document.querySelector('.dish-slider-btn.next');
+  
+  if (!track || !prevBtn || !nextBtn) return;
+
+  const cards = Array.from(track.children);
+  if (cards.length === 0) return;
+
+  let currentIndex = 0;
+
+  function getCardsPerScreen() {
+    if (window.innerWidth <= 600) return 1;
+    if (window.innerWidth <= 992) return 2;
+    return 3;
+  }
+
+  function updateSlider() {
+    const cardWidth = cards[0].getBoundingClientRect().width;
+    const gap = 20; // 20px gap defined in CSS
+    const cardsPerScreen = getCardsPerScreen();
+    
+    const maxIndex = Math.max(0, cards.length - cardsPerScreen);
+    if (currentIndex > maxIndex) {
+      currentIndex = maxIndex;
+    }
+    
+    const amountToMove = currentIndex * (cardWidth + gap);
+    track.style.transform = `translateX(-${amountToMove}px)`;
+
+    // Toggle button visibilities/disabled styles
+    prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
+    prevBtn.style.pointerEvents = currentIndex === 0 ? 'none' : 'auto';
+    
+    nextBtn.style.opacity = currentIndex >= maxIndex ? '0.5' : '1';
+    nextBtn.style.pointerEvents = currentIndex >= maxIndex ? 'none' : 'auto';
+  }
+
+  nextBtn.addEventListener('click', () => {
+    const maxIndex = cards.length - getCardsPerScreen();
+    if (currentIndex < maxIndex) {
+      currentIndex++;
+      updateSlider();
+    }
+  });
+
+  prevBtn.addEventListener('click', () => {
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateSlider();
+    }
+  });
+
+  updateSlider();
+  window.addEventListener('resize', updateSlider);
+}
+
+/**
+ * 9. Testimonial Crossfade Slider
+ */
+function initTestimonialSlider() {
+  const slides = document.querySelectorAll('.testimonial-slide');
+  const dots = document.querySelectorAll('.testimonial-dot');
+  
+  if (slides.length === 0 || dots.length === 0) return;
+
+  let currentSlide = 0;
+  let intervalId = null;
+
+  function goToSlide(index) {
+    slides[currentSlide].classList.remove('active');
+    dots[currentSlide].classList.remove('active');
+    dots[currentSlide].setAttribute('aria-selected', 'false');
+
+    currentSlide = index;
+
+    slides[currentSlide].classList.add('active');
+    dots[currentSlide].classList.add('active');
+    dots[currentSlide].setAttribute('aria-selected', 'true');
+  }
+
+  function nextSlide() {
+    const nextIndex = (currentSlide + 1) % slides.length;
+    goToSlide(nextIndex);
+  }
+
+  function startAutoCycle() {
+    stopAutoCycle();
+    intervalId = setInterval(nextSlide, 5000);
+  }
+
+  function stopAutoCycle() {
+    if (intervalId) {
+      clearInterval(intervalId);
+    }
+  }
+
+  dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+      goToSlide(index);
+      startAutoCycle();
+    });
+  });
+
+  startAutoCycle();
 }
