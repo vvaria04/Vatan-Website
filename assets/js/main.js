@@ -273,18 +273,78 @@ function initContactForm() {
 }
 
 /**
- * 6. Hero Auto Crossfade Slideshow
+ * 6. Hero Auto Crossfade Slideshow & Carousel
  */
 function initHeroSlider() {
   const slides = document.querySelectorAll('.hero-slide');
+  const dots = document.querySelectorAll('.hero-dot');
+  const prevBtn = document.querySelector('.hero-slider-btn.prev');
+  const nextBtn = document.querySelector('.hero-slider-btn.next');
+  
   if (slides.length <= 1) return;
 
   let currentSlide = 0;
-  setInterval(() => {
+  let intervalId = null;
+
+  function goToSlide(index) {
     slides[currentSlide].classList.remove('active');
-    currentSlide = (currentSlide + 1) % slides.length;
+    if (dots.length > 0) {
+      dots[currentSlide].classList.remove('active');
+      dots[currentSlide].setAttribute('aria-selected', 'false');
+    }
+
+    currentSlide = index;
+
     slides[currentSlide].classList.add('active');
-  }, 4000); // changes slide every 4 seconds
+    if (dots.length > 0) {
+      dots[currentSlide].classList.add('active');
+      dots[currentSlide].setAttribute('aria-selected', 'true');
+    }
+  }
+
+  function nextSlide() {
+    const nextIndex = (currentSlide + 1) % slides.length;
+    goToSlide(nextIndex);
+  }
+
+  function prevSlide() {
+    const prevIndex = (currentSlide - 1 + slides.length) % slides.length;
+    goToSlide(prevIndex);
+  }
+
+  function startAutoCycle() {
+    stopAutoCycle();
+    intervalId = setInterval(nextSlide, 5000);
+  }
+
+  function stopAutoCycle() {
+    if (intervalId) {
+      clearInterval(intervalId);
+    }
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      nextSlide();
+      startAutoCycle();
+    });
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      prevSlide();
+      startAutoCycle();
+    });
+  }
+
+  dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+      goToSlide(index);
+      startAutoCycle();
+    });
+  });
+
+  startAutoCycle();
 }
 
 /**

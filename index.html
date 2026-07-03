@@ -155,21 +155,51 @@
     </div>
   </header>
 
-  <!-- Hero Section with Dynamic Slideshow -->
+  <!-- Hero Section with Dynamic Slideshow Carousel -->
   <section class="hero" aria-label="Welcome Banner">
     <div class="hero-slides">
-      <div class="hero-slide active" style="background-image: url('assets/images/slide11.jpg');"></div>
-      <div class="hero-slide" style="background-image: url('assets/images/IMG-5-1.jpg');"></div>
-      <div class="hero-slide" style="background-image: url('assets/images/IMG-4-1.jpg');"></div>
-    </div>
-    <div class="hero-content">
-      <!-- Correct spelling: ACCOMMODATE (addressed report feedback) -->
-      <h2 class="hero-title">VATAN CAN ACCOMMODATE PRIVATE PARTIES OF UP TO 85 PEOPLE</h2>
-      <p class="hero-subtitle">WE ARE OPEN FOR DINNER ONLY – 7 DAYS A WEEK STARTING AT 5:00 PM</p>
-      <div class="hero-cta">
-        <a href="reservations/" class="btn btn-gold">Reserve A Table Now</a>
-        <a href="menu/" class="btn">View Our Menus</a>
+      <!-- Slide 1 -->
+      <div class="hero-slide active" style="background-image: url('assets/images/slide11.jpg');">
+        <div class="hero-content">
+          <!-- Correct spelling: ACCOMMODATE (addressed report feedback) -->
+          <h2 class="hero-title">VATAN CAN ACCOMMODATE PRIVATE PARTIES OF UP TO 85 PEOPLE</h2>
+          <p class="hero-subtitle">WE ARE OPEN FOR DINNER ONLY – 7 DAYS A WEEK STARTING AT 5:00 PM</p>
+          <div class="hero-cta">
+            <a href="reservations/" class="btn btn-gold">Reserve A Table Now</a>
+            <a href="menu/" class="btn">View Our Menus</a>
+          </div>
+        </div>
       </div>
+      <!-- Slide 2 -->
+      <div class="hero-slide" style="background-image: url('assets/images/IMG-5-1.jpg');">
+        <div class="hero-content">
+          <h2 class="hero-title">LET US TRANSPORT YOU TO INDIA WHILE YOU ENJOY OUR HIGHLY ACCLAIMED<br>AUTHENTIC PRIX FIXE THALI</h2>
+          <div class="hero-cta">
+            <a href="gallery/" class="btn btn-gold">View Gallery</a>
+          </div>
+        </div>
+      </div>
+      <!-- Slide 3 -->
+      <div class="hero-slide" style="background-image: url('assets/images/IMG-4-1.jpg');">
+        <div class="hero-content">
+          <h2 class="hero-title">VATAN CELEBRATES THE FLAVORS OF GUJARAT<br>AND THE AMBIANCE OF A TYPICAL INDIAN COURTYARD</h2>
+          <p class="hero-subtitle">We are located at 409 Third Avenue in New York City! Between 28th and 29th Street (Look for the Elephant!)</p>
+          <div class="hero-cta">
+            <a href="menu/" class="btn btn-gold">View Menu</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Carousel Controls -->
+    <button class="hero-slider-btn prev" aria-label="Previous Slide">&#10094;</button>
+    <button class="hero-slider-btn next" aria-label="Next Slide">&#10095;</button>
+    
+    <!-- Carousel Indicator Dots -->
+    <div class="hero-dots" role="tablist" aria-label="Hero slides">
+      <span class="hero-dot active" role="tab" aria-selected="true" aria-label="Slide 1"></span>
+      <span class="hero-dot" role="tab" aria-selected="false" aria-label="Slide 2"></span>
+      <span class="hero-dot" role="tab" aria-selected="false" aria-label="Slide 3"></span>
     </div>
   </section>
 

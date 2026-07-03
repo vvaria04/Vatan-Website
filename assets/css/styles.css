@@ -382,45 +382,20 @@ button:hover, .btn:hover {
   background-color: #1a1615;
   color: var(--color-text-light);
   min-height: 80vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-/* Hero Background Image styling (using slide11.jpg overlay) */
-.hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65));
-  z-index: 1;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 800px;
-  padding: 0 20px;
+  overflow: hidden;
 }
 
 .hero-title {
   color: var(--color-secondary);
-  font-size: clamp(2.5rem, 6vw, 4.2rem);
-  margin-bottom: 1.5rem;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: 1.2rem;
   text-transform: uppercase;
 }
 
 .hero-subtitle {
-  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
   font-weight: 300;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
   line-height: 1.5;
 }
 
@@ -1027,27 +1002,96 @@ button:hover, .btn:hover {
   background-position: center;
   background-repeat: no-repeat;
   opacity: 0;
-  transition: opacity 1.5s ease-in-out;
+  visibility: hidden;
+  transition: opacity 0.6s ease-in-out, visibility 0.6s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 1;
 }
 
 .hero-slide.active {
   opacity: 1;
+  visibility: visible;
+  z-index: 2;
 }
 
-.hero::after {
+.hero-slide::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.55);
-  z-index: 2;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+  z-index: 1;
 }
 
-.hero-content {
+.hero-slide .hero-content {
   position: relative;
-  z-index: 3;
+  z-index: 2;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+/* Hero Carousel Controls */
+.hero-slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(26, 22, 21, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--color-text-light);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  transition: var(--transition-smooth);
+}
+
+.hero-slider-btn:hover {
+  background: var(--color-secondary);
+  color: var(--color-primary);
+  border-color: var(--color-secondary);
+}
+
+.hero-slider-btn.prev {
+  left: 20px;
+}
+
+.hero-slider-btn.next {
+  right: 20px;
+}
+
+.hero-dots {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 10;
+}
+
+.hero-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.hero-dot.active {
+  background: var(--color-secondary);
+  transform: scale(1.25);
 }
 
 /* Scroll Reveal Elements */
