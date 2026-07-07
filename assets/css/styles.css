@@ -1634,3 +1634,30 @@ button:hover, .btn:hover {
     font-size: 1.25rem;
   }
 }
+
+/* Local Info Section Layout Grid */
+.local-info-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.local-info-content {
+  text-align: left;
+}
+
+.local-info-map {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .local-info-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .local-info-content {
+    text-align: center;
+  }
+}
