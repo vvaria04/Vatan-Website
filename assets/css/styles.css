@@ -548,74 +548,364 @@ button:hover, .btn:hover {
 }
 
 /* Special Thali Menu list details */
-.menu-section-header {
-  border-bottom: 2px solid var(--color-border);
-  padding-bottom: 10px;
-  margin: 40px 0 20px;
+.menu-page-banner {
+  background-color: #fff;
+  color: var(--color-text);
+  padding: 50px 0 30px;
+}
+
+.menu-page-banner h1 {
   color: var(--color-primary);
-  font-family: var(--font-title);
-  font-size: 1.8rem;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.menu-page-banner .breadcrumbs {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}
+
+.menu-page-banner .breadcrumbs a {
+  color: var(--color-text-muted);
+}
+
+.menu-page-main {
+  background-color: #fff;
+  padding: 20px 0 60px;
+}
+
+.menu-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.menu-page .menu-intro {
+  margin-bottom: 40px;
+}
+
+.menu-page .menu-intro h2 {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 12px;
+}
+
+.menu-page .menu-intro p {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.menu-section-header {
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 10px;
+  margin: 40px 0 24px;
+  color: var(--color-primary);
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 .menu-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-  gap: 30px;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px 60px;
 }
 
 .menu-item-block {
-  background-color: var(--color-surface);
-  padding: 20px;
-  border-radius: var(--border-radius-md);
-  box-shadow: 0 2px 8px var(--color-shadow);
-  border-left: 4px solid var(--color-primary);
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  border-left: none;
   display: flex;
   flex-direction: column;
 }
 
 .menu-item-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  margin-bottom: 8px;
+  display: block;
+  margin-bottom: 6px;
 }
 
 .menu-item-name {
+  font-family: var(--font-body);
   font-weight: 700;
-  font-size: 1.1rem;
-  color: var(--color-primary);
+  font-size: 0.92rem;
+  color: #1a1a1a;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
 }
 
 .menu-item-price {
+  font-family: var(--font-body);
   font-weight: 700;
-  color: var(--color-secondary);
-  font-size: 1.1rem;
+  color: #1a1a1a;
+  font-size: 0.92rem;
+  text-transform: uppercase;
+}
+
+.menu-item-price::before {
+  content: ' – ';
 }
 
 .menu-item-description {
-  font-size: 0.9rem;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  color: #777;
+  line-height: 1.55;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.menu-page section > ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 60px;
+}
+
+.menu-page section > ul li {
+  font-size: 0.78rem;
+  color: #777;
+  line-height: 1.55;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.menu-page section > ul li strong {
+  display: block;
+  font-weight: 700;
+  color: #1a1a1a;
+  font-size: 0.92rem;
+  margin-bottom: 4px;
+}
+
+.menu-page .menu-list-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px 60px;
+}
+
+.menu-page .menu-list-grid h3 {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 12px;
+}
+
+.menu-page .menu-list-grid p,
+.menu-page .menu-list-grid ul {
+  font-size: 0.78rem;
+  color: #777;
+  line-height: 1.55;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.menu-page .menu-list-grid ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: block;
+}
+
+.menu-page .menu-list-grid ul li {
+  margin-bottom: 10px;
+}
+
+.menu-page .menu-list-grid ul li strong {
+  color: #1a1a1a;
+}
+
+.menu-page > h2:not(.menu-section-header) {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
   color: var(--color-text-muted);
-  line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.menu-page > p,
+.menu-page > ol,
+.menu-page > ol li {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+.menu-page > h3 {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-top: 30px;
+  margin-bottom: 12px;
+}
+
+.menu-page > div:not(.menu-intro):not(.menu-hub-grid):not(.text-center) {
+  background: none;
+  border: none;
+  border-top: 1px solid #e0e0e0;
+  border-radius: 0;
+  padding: 20px 0;
+  margin-bottom: 40px;
+}
+
+.menu-page > ol {
+  margin: 0 0 30px 20px;
+}
+
+.menu-page > ol li {
+  margin-bottom: 12px;
+}
+
+.menu-page > div:not(.menu-intro):not(.menu-hub-grid):not(.text-center) h3 {
+  margin-top: 0;
+}
+
+.menu-page > div:not(.menu-intro):not(.menu-hub-grid):not(.text-center) ul {
+  list-style: none;
+  padding: 0;
+}
+
+.menu-page > div:not(.menu-intro):not(.menu-hub-grid):not(.text-center) ul li {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-bottom: 8px;
 }
 
 .menu-disclaimer {
   margin-top: 40px;
-  padding: 20px;
-  background-color: var(--color-surface-card);
-  border-radius: var(--border-radius-md);
-  border: 1px solid var(--color-border);
-  font-size: 0.9rem;
-  color: var(--color-text-muted);
+  padding: 20px 0 0;
+  background-color: transparent;
+  border-radius: 0;
+  border: none;
+  border-top: 1px solid #e0e0e0;
+  font-size: 0.78rem;
+  color: #777;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1.55;
 }
 
 /* ==========================================================================
-   7. Reviews Section
+   7. Reservations Page
    ========================================================================== */
+.reservations-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.reservations-layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 40px;
+  align-items: start;
+}
+
+.reservations-info h2 {
+  margin-bottom: 12px;
+}
+
+.reservations-intro {
+  margin-bottom: 24px;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+.reservations-policies {
+  background-color: var(--color-surface);
+  padding: 28px 30px;
+  border-radius: var(--border-radius-md);
+  box-shadow: 0 4px 15px var(--color-shadow);
+  border-left: 4px solid var(--color-primary);
+}
+
+.reservations-policies h3 {
+  color: var(--color-primary);
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.reservations-policies h3 + h3 {
+  margin-top: 24px;
+}
+
+.reservations-policies p {
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.reservations-policies p:last-child {
+  margin-bottom: 0;
+}
+
+.reservations-booking {
+  background-color: var(--color-surface);
+  padding: 30px;
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0 8px 30px var(--color-shadow);
+  position: sticky;
+  top: 30px;
+}
+
+.reservations-booking p {
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.reservations-book-btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 1.05rem;
+  padding: 14px 24px;
+}
+
+/* ==========================================================================
+   8. Reviews Section
+   ========================================================================== */
+.reviews-page-container {
+  max-width: 1200px;
+}
+
+.reviews-layout {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 40px;
+  align-items: start;
+}
+
 .reviews-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 30px;
-  margin-bottom: 50px;
+  margin-bottom: 0;
 }
 
 .review-card {
@@ -649,7 +939,9 @@ button:hover, .btn:hover {
   border-radius: var(--border-radius-lg);
   padding: 40px;
   box-shadow: 0 8px 30px var(--color-shadow);
-  margin-top: 50px;
+  margin-top: 0;
+  position: sticky;
+  top: 30px;
 }
 
 .form-group {
@@ -950,6 +1242,39 @@ button:hover, .btn:hover {
   @keyframes slideIn {
     from { transform: translateX(100%); }
     to { transform: translateX(0); }
+  }
+
+  .reviews-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .review-form-container {
+    position: static;
+  }
+
+  .reservations-layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .reservations-booking {
+    position: static;
+  }
+
+  .reservations-page {
+    padding: 0 20px;
+  }
+
+  .menu-grid,
+  .menu-page section > ul,
+  .menu-page .menu-list-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .menu-page {
+    padding: 0 20px;
   }
 }
 
