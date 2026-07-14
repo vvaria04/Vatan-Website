@@ -1252,6 +1252,14 @@ button:hover,
     height: 50px;
   }
 
+  /* Position close button inside drawer above Home link when open */
+  body.nav-open .mobile-nav-toggle {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    z-index: 1000;
+  }
+
   /* Mobile drawer design */
   .nav-menu.mobile-active {
     display: flex;

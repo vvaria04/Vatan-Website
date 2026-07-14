@@ -27,6 +27,7 @@ function initMobileMenu() {
     const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
     toggleBtn.setAttribute('aria-expanded', !isExpanded);
     navMenu.classList.toggle('mobile-active');
+    document.body.classList.toggle('nav-open');
     
     // Toggle hamburger icon (could be svg change or text change)
     if (navMenu.classList.contains('mobile-active')) {
@@ -42,6 +43,7 @@ function initMobileMenu() {
   document.addEventListener('click', (e) => {
     if (!navMenu.contains(e.target) && !toggleBtn.contains(e.target) && navMenu.classList.contains('mobile-active')) {
       navMenu.classList.remove('mobile-active');
+      document.body.classList.remove('nav-open');
       toggleBtn.innerHTML = '&#9776;';
       toggleBtn.setAttribute('aria-expanded', 'false');
       toggleBtn.setAttribute('aria-label', 'Open Menu');
