@@ -4,6 +4,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
+  initMobileDropdowns();
   initGalleryTabs();
   initLightbox();
   initReviewForm();
@@ -47,6 +48,42 @@ function initMobileMenu() {
       toggleBtn.innerHTML = '&#9776;';
       toggleBtn.setAttribute('aria-expanded', 'false');
       toggleBtn.setAttribute('aria-label', 'Open Menu');
+    }
+  });
+}
+
+/**
+ * 1b. Mobile Submenu Toggle Arrows
+ */
+function initMobileDropdowns() {
+  const dropdownNavItems = document.querySelectorAll('.nav-menu .nav-item');
+  
+  dropdownNavItems.forEach(item => {
+    const dropdownMenu = item.querySelector('.dropdown-menu');
+    const navLink = item.querySelector('.nav-link');
+    
+    if (dropdownMenu && navLink) {
+      // Create arrow button
+      const toggleBtn = document.createElement('button');
+      toggleBtn.className = 'dropdown-toggle-btn';
+      toggleBtn.innerHTML = '&#9662;'; // Down arrow symbol (▼)
+      toggleBtn.setAttribute('aria-label', 'Toggle Submenu');
+      toggleBtn.setAttribute('aria-expanded', 'false');
+      
+      // Insert right after the link
+      navLink.after(toggleBtn);
+      
+      // Click handler
+      toggleBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        const isOpen = dropdownMenu.classList.contains('mobile-open');
+        toggleBtn.setAttribute('aria-expanded', !isOpen);
+        toggleBtn.classList.toggle('open');
+        dropdownMenu.classList.toggle('mobile-open');
+        
+      });
     }
   });
 }
