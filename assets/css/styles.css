@@ -395,7 +395,7 @@ button:hover,
   position: relative;
   background-color: #1a1615;
   color: var(--color-text-light);
-  min-height: 80vh;
+  min-height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1247,6 +1247,9 @@ button:hover,
     position: relative;
     z-index: 1000;
     margin-left: auto; /* Push to the very right of the header */
+    font-size: 2.3rem; /* Make the three lines bigger on phones */
+    width: 50px;
+    height: 50px;
   }
 
   /* Mobile drawer design */
@@ -1348,7 +1351,7 @@ button:hover,
 
 @media (max-width: 768px) {
   .hero {
-    min-height: 60vh;
+    min-height: 75vh;
   }
 
   .hero-cta {
