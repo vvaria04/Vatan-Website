@@ -1244,6 +1244,9 @@ button:hover,
 
   .mobile-nav-toggle {
     display: flex;
+    position: relative;
+    z-index: 1000;
+    margin-left: auto; /* Push to the very right of the header */
   }
 
   /* Mobile drawer design */
@@ -1255,8 +1258,9 @@ button:hover,
     right: 0;
     width: 280px;
     height: 100vh;
-    background-color: var(--color-surface);
-    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.15);
+    background-color: #1a1615; /* Dark charcoal matching header */
+    border-left: 3px solid var(--color-primary); /* Traditional terracotta accent border */
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.4);
     padding: 80px 30px 40px;
     gap: 20px;
     align-items: flex-start;
@@ -1268,6 +1272,11 @@ button:hover,
   .nav-menu.mobile-active .nav-link {
     font-size: 1.1rem;
     padding: 5px 0;
+    color: var(--color-text-light); /* Explicitly light */
+  }
+
+  .nav-menu.mobile-active .nav-link:hover {
+    color: var(--color-secondary); /* Gold on hover */
   }
 
   .nav-menu.mobile-active .dropdown-menu {
@@ -1277,9 +1286,20 @@ button:hover,
     visibility: visible;
     transform: none;
     padding-left: 15px;
-    border-left: 2px solid var(--color-border);
+    border-left: 2px solid rgba(255, 255, 255, 0.1);
     margin-top: 5px;
     min-width: unset;
+    background-color: transparent;
+  }
+
+  .nav-menu.mobile-active .dropdown-menu a {
+    color: rgba(255, 255, 255, 0.7); /* Subtle light gray */
+    padding: 8px 0;
+    display: block;
+  }
+
+  .nav-menu.mobile-active .dropdown-menu a:hover {
+    color: var(--color-secondary); /* Gold on hover */
   }
 
   @keyframes slideIn {
@@ -1341,8 +1361,11 @@ button:hover,
   }
 
   .top-header-content {
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     text-align: center;
+    gap: 8px;
   }
 
   .footer-grid {
