@@ -939,15 +939,12 @@ button:hover,
 }
 
 .reviews-layout {
-  display: grid;
-  grid-template-columns: 1fr 380px;
-  gap: 40px;
-  align-items: start;
+  display: block;
 }
 
 .reviews-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
   gap: 30px;
   margin-bottom: 0;
 }
@@ -1383,14 +1380,7 @@ button:hover,
     }
   }
 
-  .reviews-layout {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
 
-  .review-form-container {
-    position: static;
-  }
 
   .reservations-layout {
     grid-template-columns: 1fr;
