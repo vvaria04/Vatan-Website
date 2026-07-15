@@ -1177,8 +1177,8 @@ button:hover,
 
 .footer-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 40px;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 50px;
   margin-bottom: 40px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   padding-bottom: 40px;
@@ -1217,11 +1217,7 @@ button:hover,
 }
 
 .footer-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 15px;
+  text-align: center;
   font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.5);
 }
@@ -1432,6 +1428,7 @@ button:hover,
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 30px;
+    text-align: center;
   }
 }
 
