@@ -126,52 +126,20 @@
             parking garages located in the immediate area.</p>
         </section>
 
-        <!-- Form -->
-        <section
-          style="flex: 1 1 400px; background-color: var(--color-surface); padding: 30px; border-radius: var(--border-radius-lg); box-shadow: 0 4px 15px var(--color-shadow);"
-          aria-labelledby="send-message-title">
-          <h2 id="send-message-title" style="margin-bottom: 20px; font-size: 1.8rem;">Send Us A Message</h2>
-          <form id="contact-submit-form" action="#" method="POST">
-            <div class="form-group">
-              <label for="contact-name">Name</label>
-              <input type="text" id="contact-name" class="form-control" placeholder="Your Name" required>
-            </div>
-            <div class="form-group">
-              <label for="contact-email">Email</label>
-              <input type="email" id="contact-email" class="form-control" placeholder="Your Email" required>
-            </div>
-            <div class="form-group">
-              <label for="contact-subject">Subject</label>
-              <input type="text" id="contact-subject" class="form-control" placeholder="Subject" required>
-            </div>
-            <div class="form-group">
-              <label for="contact-message">Message</label>
-              <textarea id="contact-message" class="form-control" rows="5" placeholder="Your Message..."
-                required></textarea>
-            </div>
-            <div class="form-group">
-              <label for="contact-captcha">Security Question: What is 9 + 3?</label>
-              <input type="number" id="contact-captcha" class="form-control" placeholder="Enter number" required>
-            </div>
-            <button type="submit" class="btn btn-gold">Send Message</button>
-          </form>
+        <!-- Map Embed placeholder or simple details for visual excellence -->
+        <section aria-label="Location Map"
+          style="border-radius: var(--border-radius-lg); overflow: hidden; box-shadow: 0 4px 15px var(--color-shadow); background-color: var(--color-surface); padding: 10px; border: 1px solid var(--color-border);">
+          <!-- Interactive leaflet map or clean placeholder map image/iframe -->
+          <div class="map-wrapper"
+            style="border-radius: var(--border-radius-md); overflow: hidden; box-shadow: 0 4px 15px var(--color-shadow); border: 1px solid var(--color-border);">
+            <iframe
+              src="https://maps.google.com/maps?q=Vatan%20Indian%20Vegetarian%20Restaurant,%20409%203rd%20Ave,%20New%20York,%20NY%2010016&t=&z=16&ie=UTF8&iwloc=&output=embed"
+              width="100%" height="380" style="border:0; display:block;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Vatan Indian Vegetarian Restaurant Location Map"></iframe>
+          </div>
         </section>
       </div>
-
-      <!-- Map Embed placeholder or simple details for visual excellence -->
-      <section aria-label="Location Map"
-        style="border-radius: var(--border-radius-lg); overflow: hidden; box-shadow: 0 4px 15px var(--color-shadow); background-color: var(--color-surface); padding: 10px; border: 1px solid var(--color-border);">
-        <!-- Interactive leaflet map or clean placeholder map image/iframe -->
-        <div
-          style="position: relative; width:100%; height:350px; background-color:#eae3d2; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; border-radius: var(--border-radius-md);">
-          <span style="font-size: 3rem; color: var(--color-primary); margin-bottom: 10px;">&#128205;</span>
-          <h3 style="color: var(--color-primary);">Vatan Restaurant Location</h3>
-          <p style="margin-top: 5px; color: var(--color-text);">409 3rd Ave, New York, NY 10016</p>
-          <a href="https://maps.google.com/?q=409+3rd+Ave,+New+York,+NY+10016" target="_blank" rel="noopener noreferrer"
-            class="btn btn-gold" style="margin-top: 15px;">Open in Google Maps</a>
-        </div>
-      </section>
-    </div>
   </main>
 
   <!-- Footer -->
@@ -181,17 +149,6 @@
         <h3>Vatan Restaurant</h3>
         <p>Vatan is an acclaimed Indian vegetarian restaurant in New York City offering an authentic prix fixe Gujarati
           Thali dining experience in a beautiful, transporting courtyard setting.</p>
-      </div>
-      <div class="footer-col">
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="../menu/">Our Menus</a></li>
-          <li><a href="../menu/buffet/">All-You-Can-Eat Thali</a></li>
-          <li><a href="../menu/kosher/">Kosher Vegetarian Dining</a></li>
-          <li><a href="../gallery/">Ambiance Gallery</a></li>
-          <li><a href="../reservations/">Book a Table</a></li>
-          <li><a href="../reviews/">Reviews</a></li>
-        </ul>
       </div>
       <div class="footer-col">
         <h3>Hours & Location</h3>
