@@ -688,7 +688,7 @@ button:hover,
 .menu-item-name {
   font-family: var(--font-body);
   font-weight: 700;
-  font-size: 0.92rem;
+  font-size: 1.1rem;
   color: #1a1a1a;
   text-transform: uppercase;
   letter-spacing: 0.03em;
@@ -698,7 +698,7 @@ button:hover,
   font-family: var(--font-body);
   font-weight: 700;
   color: #1a1a1a;
-  font-size: 0.92rem;
+  font-size: 1.1rem;
   text-transform: uppercase;
 }
 
@@ -708,7 +708,7 @@ button:hover,
 
 .menu-item-description {
   font-family: var(--font-body);
-  font-size: 0.78rem;
+  font-size: 0.9rem;
   color: #777;
   line-height: 1.55;
   text-transform: uppercase;
@@ -725,7 +725,7 @@ button:hover,
 }
 
 .menu-page section>ul li {
-  font-size: 0.78rem;
+  font-size: 0.9rem;
   color: #777;
   line-height: 1.55;
   text-transform: uppercase;
@@ -736,7 +736,7 @@ button:hover,
   display: block;
   font-weight: 700;
   color: #1a1a1a;
-  font-size: 0.92rem;
+  font-size: 1.1rem;
   margin-bottom: 4px;
 }
 
@@ -748,7 +748,7 @@ button:hover,
 
 .menu-page .menu-list-grid h3 {
   font-family: var(--font-body);
-  font-size: 0.92rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: #1a1a1a;
   text-transform: uppercase;
@@ -758,7 +758,7 @@ button:hover,
 
 .menu-page .menu-list-grid p,
 .menu-page .menu-list-grid ul {
-  font-size: 0.78rem;
+  font-size: 0.9rem;
   color: #777;
   line-height: 1.55;
   text-transform: uppercase;
