@@ -1,8 +1,3 @@
-# Redirect HTTP and www to canonical HTTPS domain
-http://vatanny.com/* https://vatanny.com/:splat 301!
-http://www.vatanny.com/* https://vatanny.com/:splat 301!
-https://www.vatanny.com/* https://vatanny.com/:splat 301!
-
-# Redirect old /home paths to root
-/home/* /:splat 301!
-/home / 301!
+# Cloudflare Pages Redirects
+/home/* / 301
+/home / 301
